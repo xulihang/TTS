@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Speech.Synthesis;
 
 namespace TTS
@@ -30,6 +26,11 @@ namespace TTS
                 {
                     synthesizer.SelectVoice(args[1]);
                 }
+                else if (args.Length == 3) {
+                    synthesizer.SelectVoice(args[1]);
+                    synthesizer.Rate = int.Parse(args[2]);
+                }
+                
                 text = args[0];
                 synthesizer.Speak(text);
             }
